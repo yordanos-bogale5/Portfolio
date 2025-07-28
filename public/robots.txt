@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://v0-yordanos-portifolio-d4460g2ehnb-mspifk.vercel.app/sitemap.xml
+
+# Important pages
+Allow: /about
+Allow: /projects
+Allow: /resume
+

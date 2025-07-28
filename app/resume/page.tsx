@@ -35,14 +35,21 @@ export default function ResumePage() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + resumeImages.length) % resumeImages.length)
   }
 
-  const downloadResume = () => {
-    const resumeUrl = "/YordanosBogale_Resume.pdf"
-    const link = document.createElement("a")
-    link.href = resumeUrl
-    link.download = "YordanosBogale_Resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleDownload = async () => {
+    try {
+      const response = await fetch("/api/download-resume")
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = url
+      a.download = "YordanosBogale_Resume.pdf"
+      document.body.appendChild(a)
+      a.click()
+      window.URL.revokeObjectURL(url)
+      document.body.removeChild(a)
+    } catch (error) {
+      console.error("Error downloading resume:", error)
+    }
   }
 
   return (
@@ -70,7 +77,6 @@ export default function ResumePage() {
               />
             </div>
 
-            {/* Navigation Arrows */}
             <button
               onClick={prevImage}
               className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-[#fca311] text-white p-1 md:p-2 rounded-full hover:bg-[#e69500] transition-all"
@@ -85,7 +91,6 @@ export default function ResumePage() {
             </button>
           </div>
 
-          {/* Image Indicators */}
           <div className="flex justify-center mt-4 space-x-2">
             {resumeImages.map((_, index) => (
               <button
@@ -99,15 +104,16 @@ export default function ResumePage() {
           </div>
         </div>
 
-        {/* Download Button */}
         <div className="mt-8 flex justify-center">
-          <button
-            onClick={downloadResume}
+          <a
+            href="https://drive.google.com/uc?export=download&id=1mzsEJuOydatYZmtjYBEJr8J48Fo_88QF"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#fca311] hover:bg-[#e69500] text-white px-6 py-2 md:px-8 md:py-3 rounded-full shadow-lg transition-colors duration-200 flex items-center gap-2 text-sm md:text-base"
           >
             <Download className="w-4 h-4 md:w-5 md:h-5" />
             Download Full Resume
-          </button>
+          </a>
         </div>
       </div>
     </div>

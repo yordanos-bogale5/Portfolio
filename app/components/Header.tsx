@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link"
 import { Github, Menu, X } from "lucide-react"
 import Logo from "./Logo"
