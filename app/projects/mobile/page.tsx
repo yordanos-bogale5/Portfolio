@@ -8,6 +8,13 @@ import { motion } from "framer-motion"
 
 const mobileProjects = [
   {
+    title: "Taza",
+    description: "A comprehensive real estate mobile application featuring property listings, detailed property views, advanced search filters, user authentication, and property management for both buyers and sellers in Ethiopia.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
+    previewUrl: "https://github.com/yordanos-bogale5/taza-real-estate",
+    isMobile: true,
+  },
+  {
     title: "Bed Time Story",
     description: "Culturally rich bedtime stories for Ethiopian kids.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tir.jpg-v1FBy955RXRhxK3EEAUR433EdS17lc.jpeg",
