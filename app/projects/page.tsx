@@ -1,3 +1,4 @@
+
 "use client"
 
 import { ArrowLeft } from "lucide-react"
@@ -5,6 +6,39 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 
 export default function ProjectsPage() {
+  const projectCategories = [
+    {
+      title: "Mobile Applications",
+      emoji: "📱",
+      description: "Cross-platform mobile apps built with Flutter and React Native",
+      href: "/projects/mobile"
+    },
+    {
+      title: "Web Applications & Websites",
+      emoji: "🌐",
+      description: "Full-stack web applications and responsive websites",
+      href: "/projects/web"
+    },
+    {
+      title: "System & Backend Development",
+      emoji: "⚙️",
+      description: "Backend systems, APIs, and server-side applications",
+      href: "/projects/backend"
+    },
+    {
+      title: "CLI Tools & Automation",
+      emoji: "🛠️",
+      description: "Command-line tools and automation scripts",
+      href: "/projects/cli"
+    },
+    {
+      title: "Real-time & WebSocket Integrations",
+      emoji: "🔄",
+      description: "Real-time applications with live data synchronization",
+      href: "/projects/realtime"
+    }
+  ]
+
   return (
     <div className="min-h-screen bg-[#0f0f1a] text-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
@@ -32,40 +66,26 @@ export default function ProjectsPage() {
             Choose a category to explore my work.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="group"
-            >
-              <Link href="/projects/web">
-                <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg p-8 text-center transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                  <div className="text-6xl mb-4">🌐</div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#fca311]">Web Projects</h3>
-                  <p className="text-gray-300">
-                    Full-stack web applications built with modern technologies like Next.js, React, Node.js, and more.
-                  </p>
-                </div>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="group"
-            >
-              <Link href="/projects/mobile">
-                <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg p-8 text-center transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                  <div className="text-6xl mb-4">📱</div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#fca311]">Mobile Projects</h3>
-                  <p className="text-gray-300">
-                    Cross-platform mobile applications built with Flutter, React Native, and native technologies.
-                  </p>
-                </div>
-              </Link>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Link href={category.href}>
+                  <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg p-6 text-center transition-all duration-300 hover:transform hover:scale-105 cursor-pointer h-full">
+                    <div className="text-4xl mb-3">{category.emoji}</div>
+                    <h3 className="text-lg font-bold mb-3 text-[#fca311]">{category.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {category.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
