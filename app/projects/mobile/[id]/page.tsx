@@ -1,71 +1,67 @@
 
 "use client"
 
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight, Github } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { notFound } from "next/navigation"
+import { useState } from "react"
+import { projects } from "../projects-data"
 
-const projectDetails: Record<string, any> = {
-  fabios: {
-    title: "Fabios",
-    subtitle: "Food Delivery Application",
-    description: "A food delivery application for Infinite Solution Dpl (UAE) transitioning designs from Figma to implementation.",
-    category: "Food Delivery",
-    mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-    screenshots: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg"
-    ],
-    overview: "A comprehensive food delivery Application designed for Infinite Solution Dpl in UAE. The app transitions seamlessly from Figma designs to full implementation.",
-    features: [
-      "Restaurant browsing",
-      "Menu exploration", 
-      "Order tracking",
-      "Payment integration",
-      "Customer reviews"
-    ],
-    technologies: ["Flutter", "Dart", "Firebase", "REST API"],
-    githubUrl: "https://github.com/yordanos-bogale5/Birds_Wallpaper"
-  },
-  taza: {
-    title: "Taza",
-    subtitle: "Real Estate Application",
-    description: "A comprehensive real estate mobile application featuring property listings, detailed property views, advanced search filters, user authentication, and property management for both buyers and sellers in Ethiopia.",
-    category: "Real Estate",
-    mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-    screenshots: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder"
-    ],
-    overview: "A comprehensive real estate application for Ethiopian market with advanced property management features.",
-    features: [
-      "Property listings",
-      "Advanced search filters",
-      "User authentication",
-      "Property management",
-      "Detailed property views"
-    ],
-    technologies: ["Flutter", "Firebase", "MongoDB", "REST API"],
-    githubUrl: "https://github.com/yordanos-bogale5/taza-real-estate"
-  }
+const MobileFrame = ({
+  children,
+  className = "",
+  isDark = false,
+}: {
+  children: React.ReactNode
+  className?: string
+  isDark?: boolean
+}) => {
+  return (
+    <div className={`relative border-[8px] border-zinc-800 rounded-[2rem] shadow-xl ${className}`}>
+      <div className="h-[24px] w-[2px] absolute -right-[10px] top-[48px] rounded-l-lg bg-zinc-800"></div>
+      <div className="h-[32px] w-[2px] absolute -right-[10px] top-[88px] rounded-l-lg bg-zinc-800"></div>
+      <div className="h-[32px] w-[2px] absolute -right-[10px] top-[128px] rounded-l-lg bg-zinc-800"></div>
+      <div className="h-[24px] w-[2px] absolute -left-[10px] top-[48px] rounded-r-lg bg-zinc-800"></div>
+      <div className={`rounded-[1.7rem] overflow-hidden w-full h-full ${isDark ? "bg-zinc-900" : "bg-white"}`}>
+        {children}
+        <div className="absolute bottom-1 left-0 right-0 flex justify-center">
+          <div className="w-16 h-1 bg-zinc-700 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = projectDetails[params.id]
-  
-  if (!project) {
-    notFound()
+  const project = projects.find((p) => p.id === params.id)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  if (!project || !project.screenshots?.length) {
+    return (
+      <div className="min-h-screen bg-[#0f0f1a] text-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Project not found</h1>
+          <Link href="/projects/mobile" className="text-[#fca311] hover:text-[#fca311]/80">
+            Back to Mobile Projects
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev === (project.screenshots?.length || 1) - 1 ? 0 : prev + 1))
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? (project.screenshots?.length || 1) - 1 : prev - 1))
   }
 
   return (
     <div className="min-h-screen bg-[#0f0f1a] text-white">
-      <div className="container mx-auto px-4 py-8 md:py-12">
+      <div className="container mx-auto px-4 py-8">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <Link href="/projects/mobile" className="inline-flex items-center text-[#fca311] hover:text-[#fca311]/80 mb-8">
             <ArrowLeft className="mr-2" /> Back to Mobile Projects
@@ -73,133 +69,146 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            className="text-center mb-12"
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold mb-6 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-[#fca311]">{project.title}</span>
-            </h1>
-            <p className="text-gray-400 text-lg">{project.subtitle}</p>
-          </motion.div>
+            <span className="text-[#fca311]">{project.title}</span>
+          </motion.h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            {/* Main Phone Mockup */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex justify-center"
-            >
-              <div className="relative">
-                {/* Phone Frame */}
-                <div className="relative mx-auto border-[14px] border-black rounded-[2.5rem] h-[500px] w-[250px] shadow-2xl">
-                  <div className="h-[32px] w-[3px] absolute -right-[17px] top-[72px] rounded-l-lg bg-black"></div>
-                  <div className="h-[46px] w-[3px] absolute -right-[17px] top-[124px] rounded-l-lg bg-black"></div>
-                  <div className="h-[46px] w-[3px] absolute -right-[17px] top-[178px] rounded-l-lg bg-black"></div>
-                  <div className="h-[32px] w-[3px] absolute -left-[17px] top-[72px] rounded-r-lg bg-black"></div>
-                  <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white">
-                    <div className="relative w-full h-full">
+          <div className="bg-[#1a1a2e] rounded-3xl p-8 mb-12 shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+              {/* Main Preview */}
+              <div className="space-y-6">
+                <div className="relative max-w-[300px] mx-auto">
+                  <MobileFrame className="aspect-[9/19]" isDark={false}>
+                    <div className="relative w-full h-[calc(100%-48px)]">
                       <Image
-                        src={project.mainImage}
-                        alt={project.title}
+                        src={project.screenshots?.[currentImageIndex]?.image || "/placeholder.svg"}
+                        alt={project.screenshots?.[currentImageIndex]?.title || project.title}
                         fill
                         className="object-cover"
+                        priority
                       />
                     </div>
-                  </div>
+                  </MobileFrame>
+
+                  <button
+                    onClick={prevImage}
+                    className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-[#fca311] text-white p-2 rounded-full hover:bg-[#e69500] transition-all z-10"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-[#fca311] text-white p-2 rounded-full hover:bg-[#e69500] transition-all z-10"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
                 </div>
-              </div>
-            </motion.div>
 
-            {/* Project Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="space-y-6"
-            >
-              <div>
-                <h2 className="text-2xl font-bold text-[#fca311] mb-4">Welcome Screen</h2>
-                <p className="text-gray-300">{project.overview}</p>
-              </div>
-
-              {/* Screenshots Gallery */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Screen Preview</h3>
-                <div className="grid grid-cols-4 gap-2">
-                  {project.screenshots.slice(0, 4).map((screenshot: string, index: number) => (
-                    <div key={index} className="aspect-[3/4] relative rounded-lg overflow-hidden border border-[#fca311]/20">
-                      <Image
-                        src={screenshot}
-                        alt={`Screenshot ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                <div className="flex justify-center space-x-2">
+                  {project.screenshots.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentImageIndex ? "bg-[#fca311]" : "bg-gray-600"
+                      }`}
+                    />
                   ))}
                 </div>
               </div>
-            </motion.div>
+
+              {/* Screen Info */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-[#fca311] mb-2">
+                    {project.screenshots?.[currentImageIndex]?.title || "Preview"}
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed">
+                    {project.screenshots?.[currentImageIndex]?.description || "No description available"}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Screen Preview</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
+                    {project.screenshots.map((screen, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className="transform transition-all duration-200 hover:scale-105"
+                      >
+                        <MobileFrame
+                          className={`aspect-[9/19] ${
+                            index === currentImageIndex ? "ring-2 ring-[#fca311]" : "opacity-60"
+                          }`}
+                          isDark={false}
+                        >
+                          <div className="relative w-full h-[calc(100%-48px)]">
+                            <Image
+                              src={screen.image || "/placeholder.svg"}
+                              alt={screen.title}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        </MobileFrame>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Project Details Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Project Overview */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="bg-[#1a1a2e] rounded-lg p-6 border border-[#fca311]/20"
-            >
-              <h3 className="text-xl font-bold text-[#fca311] mb-4">Project Overview</h3>
-              <p className="text-gray-300 leading-relaxed">{project.description}</p>
-              
-              <div className="mt-6">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-[#fca311] text-black font-semibold rounded-lg hover:bg-[#fca311]/90 transition-colors"
-                >
-                  View Source Code
-                </a>
+          <div className="grid md:grid-cols-2 gap-8 bg-[#1a1a2e] rounded-3xl p-8 shadow-2xl">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-bold text-[#fca311] mb-4">Project Overview</h2>
+                <p className="text-gray-300 leading-relaxed">{project.description}</p>
               </div>
-            </motion.div>
 
-            {/* Key Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="bg-[#1a1a2e] rounded-lg p-6 border border-[#fca311]/20"
-            >
-              <h3 className="text-xl font-bold text-[#fca311] mb-4">Key Features</h3>
-              <ul className="space-y-2">
-                {project.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center text-gray-300">
-                    <div className="w-2 h-2 bg-[#fca311] rounded-full mr-3"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <h4 className="font-semibold text-[#fca311] mb-3">Technologies Used</h4>
+              <div>
+                <h2 className="text-2xl font-bold text-[#fca311] mb-4">Technologies Used</h2>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech: string, index: number) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-[#fca311]/20 text-[#fca311] rounded-full text-sm"
-                    >
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-3 py-1 bg-[#fca311]/20 text-[#fca311] rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-bold text-[#fca311] mb-4">Key Features</h2>
+                <ul className="space-y-2">
+                  {project.features.map((feature, index) => (
+                    <li key={index} className="flex items-center text-gray-300">
+                      <div className="w-2 h-2 bg-[#fca311] rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-[#fca311] hover:bg-[#e69500] text-black px-6 py-3 rounded-lg transition-colors text-lg font-semibold"
+                >
+                  <Github className="mr-2" />
+                  View Source Code
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
