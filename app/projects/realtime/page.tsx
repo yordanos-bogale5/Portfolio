@@ -52,6 +52,7 @@ export default function RealtimeProjectsPage() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       unoptimized
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/80 to-transparent"></div>
                     <div className="absolute bottom-4 left-4">
