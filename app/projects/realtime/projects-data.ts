@@ -5,7 +5,7 @@ export const realtimeProjects = [
     title: "LiveStockPro",
     description:
       "A real-time livestock trading platform with live market data feeds, WebSocket integration for instant price updates, and comprehensive trading analytics for livestock markets.",
-    image: "/livestockpro-banner.png",
+    image: "https://drive.google.com/uc?export=view&id=1dVcW_bUQuem4ObW2RQEnkxAjLWAQmnpH",
     videoUrl: "https://drive.google.com/file/d/1Hz-YeCdI2q6vwOamgnPHcteEjpoOOhDS/view?usp=sharing",
     technologies: ["PHP", "WebSocket", "MySQL", "JavaScript", "Upstock API", "Real-time Data"],
     features: [

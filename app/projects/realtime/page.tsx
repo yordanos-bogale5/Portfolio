@@ -1,4 +1,3 @@
-
 "use client"
 
 import { ArrowLeft } from "lucide-react"
@@ -35,41 +34,64 @@ export default function RealtimeProjectsPage() {
             Real-time applications with live data synchronization.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {realtimeProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="group"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#fca311] mb-2">{project.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-[#fca311]/20 text-[#fca311] rounded text-xs">
-                        {tech}
+                <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105">
+                  {/* Banner Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/80 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        project.status === 'Production' 
+                          ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                          : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                      }`}>
+                        {project.status}
                       </span>
-                    ))}
+                    </div>
                   </div>
-                  
-                  <Link
-                    href={`/projects/realtime/${project.id}`}
-                    className="inline-block px-6 py-2 text-sm md:text-base bg-[#fca311] text-black rounded-md hover:bg-[#e69500] transition-colors font-semibold"
-                  >
-                    View Details
-                  </Link>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-[#fca311] mb-3">{project.title}</h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-[#fca311]/20 text-[#fca311] rounded text-xs"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">
+                          +{project.technologies.length - 3} more
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-end">
+                      <Link
+                        href={`/projects/realtime/${project.id}`}
+                        className="inline-block px-4 py-2 bg-[#fca311] text-black rounded-md hover:bg-[#e69500] transition-colors font-semibold"
+                      >
+                        View Details
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
