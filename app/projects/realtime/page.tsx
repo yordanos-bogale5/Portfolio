@@ -43,9 +43,9 @@ export default function RealtimeProjectsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105 h-full flex flex-col">
                   {/* Banner Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -70,9 +70,9 @@ export default function RealtimeProjectsPage() {
                     </div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-xl font-bold text-[#fca311] mb-3">{project.title}</h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                    <p className="text-gray-300 mb-4 leading-relaxed flex-1">{project.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech) => (
@@ -90,7 +90,7 @@ export default function RealtimeProjectsPage() {
                       )}
                     </div>
 
-                    <div className="flex items-center justify-end">
+                    <div className="flex items-center justify-end mt-auto">
                       <Link
                         href={`/projects/realtime/${project.id}`}
                         className="inline-block px-4 py-2 bg-[#fca311] text-black rounded-md hover:bg-[#e69500] transition-colors font-semibold"
