@@ -49,5 +49,30 @@ The platform includes advanced analytics tools that process real-time data strea
 The platform utilizes advanced WebSocket connections to establish persistent communication channels with live timing systems, ensuring minimal latency in data transmission and processing. The system captures detailed race metrics including lap times, sector splits, position changes, and performance analytics, storing this data for both real-time monitoring and post-race analysis.
 
 Built with modern web technologies and optimized for high-frequency data processing, RaceDataLive provides race teams and analysts with critical insights during live racing events. The system features a comprehensive dashboard that displays real-time race statistics, timing data, and performance metrics, enabling strategic decisions to be made during races. The extracted data can be used for various purposes including race strategy optimization, driver performance analysis, and competitive intelligence gathering.`
+  },
+  {
+    id: "websocketguardian",
+    title: "WebSocketGuardian",
+    description:
+      "A robust WebSocket server management system using Supervisor to ensure continuous operation and reliability for real-time applications and live data streaming services.",
+    image: "/placeholder.svg",
+    videoUrl: "https://drive.google.com/file/d/1Rr2TuptsFq-HugoEDjrJpA758FYOhXNX/view?usp=sharing",
+    technologies: ["WebSocket", "Supervisor", "Node.js", "Process Management", "System Administration", "Real-time Server"],
+    features: [
+      "Continuous WebSocket server operation",
+      "Supervisor process management",
+      "Automatic server restart on failure",
+      "Real-time connection monitoring",
+      "Background service configuration",
+      "Server reliability assurance",
+      "Live data streaming support",
+      "Process health monitoring"
+    ],
+    status: "Production",
+    detailedDescription: `WebSocketGuardian is a comprehensive WebSocket server management solution that leverages Supervisor to ensure continuous operation and maximum reliability for real-time applications. The system is specifically designed to maintain persistent WebSocket connections and handle live data streaming with zero downtime, making it essential for mission-critical real-time applications.
+
+The project involves setting up and configuring a WebSocket server infrastructure that runs continuously in the background using Supervisor, a process control system that monitors and manages server processes. Supervisor ensures that the WebSocket server automatically restarts in case of failures, maintains optimal performance, and provides detailed logging and monitoring capabilities for system administrators.
+
+WebSocketGuardian addresses the critical need for reliable real-time communication in modern applications by implementing robust process management strategies. The system includes comprehensive monitoring tools that track server health, connection statistics, and performance metrics. The Supervisor configuration ensures that the WebSocket server maintains high availability and can handle multiple concurrent connections while providing automatic recovery mechanisms for any system failures or unexpected shutdowns.`
   }
 ]
