@@ -52,6 +52,10 @@ export default function RealtimeProjectsPage() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       unoptimized
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/placeholder.svg";
+                      }}
                       priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/80 to-transparent"></div>
