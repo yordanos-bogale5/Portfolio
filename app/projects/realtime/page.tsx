@@ -4,6 +4,8 @@
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { realtimeProjects } from "./projects-data"
 
 export default function RealtimeProjectsPage() {
   return (
@@ -33,8 +35,44 @@ export default function RealtimeProjectsPage() {
             Real-time applications with live data synchronization.
           </motion.p>
 
-          <div className="text-center">
-            <p className="text-gray-400">Projects coming soon...</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {realtimeProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#fca311] mb-2">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-[#fca311]/20 text-[#fca311] rounded text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link
+                    href={`/projects/realtime/${project.id}`}
+                    className="inline-block px-6 py-2 text-sm md:text-base bg-[#fca311] text-black rounded-md hover:bg-[#e69500] transition-colors font-semibold"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
