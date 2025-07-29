@@ -15,6 +15,24 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: [
+      "hebbkx1anhila5yf.public.blob.vercel-storage.com",
+      "v0.blob.com",
+      "drive.google.com",
+      "lh3.googleusercontent.com"
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+        pathname: '/uc/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      }
+    ]
   },
   experimental: {
     webpackBuildWorker: true,

@@ -46,10 +46,12 @@ export default function RealtimeProjectsPage() {
                 <div className="bg-[#1a1a2e] border border-[#fca311]/30 hover:border-[#fca311] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:scale-105">
                   {/* Banner Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/80 to-transparent"></div>
                     <div className="absolute bottom-4 left-4">
