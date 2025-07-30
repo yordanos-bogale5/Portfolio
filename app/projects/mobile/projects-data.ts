@@ -17,24 +17,19 @@ export const projects = [
     ],
     screenshots: [
       {
-        title: "Welcome Screen",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-        description: "Clean and modern splash screen featuring the Fabios logo in Italian flag colors",
+        title: "Login Screen",
+        image: "/fabios-login.jpg",
+        description: "Clean authentication screen with Fabios branding, featuring email/password login fields, 'Remember Me' option, 'Forgot Password?' link, and prominent 'Login' button with social media integration options",
       },
       {
-        title: "Home Screen",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-        description: "Main dashboard showcasing best sellers and menu categories with an intuitive navigation system",
+        title: "Pasta Menu",
+        image: "/fabios-pasta-menu.jpg",
+        description: "Comprehensive pasta menu showcasing various Italian dishes including Spaghetti Carbonara (25 QAR), Penne Arrabbiata (22 QAR), Fettuccine Alfredo (28 QAR), and Lasagna Bolognese (30 QAR) with appetizing food photography and clear pricing",
       },
       {
-        title: "Menu Categories",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-        description: "Detailed menu view with comprehensive pasta selections and pricing in QAR",
-      },
-      {
-        title: "Product Details",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.jpg-OMQnbGt7Tt3N3TL7mprfXx2NrwwgJh.jpeg",
-        description: "Interactive product customization page with pasta type selection and add-ons",
+        title: "Pasta Details",
+        image: "/fabios-pasta-detail.jpg",
+        description: "Detailed product view for Spaghetti Carbonara (25 QAR) featuring high-quality food photography, comprehensive description, customization options for pasta type and add-ons, quantity selector, and 'Add to Cart' functionality",
       },
     ],
   },
@@ -55,24 +50,34 @@ export const projects = [
     ],
     screenshots: [
       {
-        title: "Main Menu",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jpg-oSHthecCB3ybp66gRR63dkbidomqHT.jpeg",
-        description: "Clean and elegant main menu featuring the Crypto Chess logo and game mode selection",
-      },
-      {
-        title: "Game Setup",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jpg-oSHthecCB3ybp66gRR63dkbidomqHT.jpeg",
-        description: "Comprehensive game setup screen with AI difficulty, side selection, and time control options",
+        title: "User Registration",
+        image: "/chess-signup.jpg",
+        description: "Clean signup interface with username, email, and password fields, featuring 'Create Account' button and 'Already have an account? Sign In' link with modern blue and white design",
       },
       {
         title: "Create Room",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jpg-oSHthecCB3ybp66gRR63dkbidomqHT.jpeg",
-        description: "Room creation interface with various stake options for competitive play",
+        image: "/chess-create-room.jpg",
+        description: "Room creation screen with stake amount selection (0.001, 0.01, 0.1, 1 ETH), 'Create Room' and 'Join Room' options, and 'My Wallet' section showing current balance with clean cryptocurrency-focused interface",
       },
       {
-        title: "Gameplay",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jpg-oSHthecCB3ybp66gRR63dkbidomqHT.jpeg",
-        description: "Minimalist chess board interface with intuitive controls and clean design",
+        title: "Game Setup",
+        image: "/chess-game-setup.jpg",
+        description: "Comprehensive game configuration with 'Play vs Computer' and 'Play vs Human' options, difficulty selection (Easy, Medium, Hard), side choice (White/Black pieces), time controls (1+0, 3+0, 5+0, 10+0 minutes), and 'Start Game' button",
+      },
+      {
+        title: "Chess Gameplay",
+        image: "/chess-gameplay.jpg",
+        description: "Active chess game interface showing the board with pieces in play, move timer, player information, and game controls with clean, professional chess board design and intuitive piece movement",
+      },
+      {
+        title: "Settings Menu",
+        image: "/chess-settings.jpg",
+        description: "Comprehensive settings screen with options for Sound effects, Music, Vibration, Notifications, Language selection, Theme customization, Account management, Privacy settings, and Help & Support with toggle switches and navigation arrows",
+      },
+      {
+        title: "Crypto Wallet",
+        image: "/chess-wallet.jpg",
+        description: "Integrated cryptocurrency wallet showing current balance, transaction history, deposit/withdrawal options, and wallet management features with secure blockchain integration for competitive chess matches",
       },
     ],
   },
@@ -95,27 +100,14 @@ export const projects = [
     ],
     screenshots: [
       {
-        title: "Welcome Screen",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tir.jpg-v1FBy955RXRhxK3EEAUR433EdS17lc.jpeg",
-        description:
-          "Immersive welcome screen with mystical particles animation and engaging introduction to the world of bedtime stories",
+        title: "Story Collection",
+        image: "/bedtime-story-list.jpg",
+        description: "Beautiful story collection featuring traditional Ethiopian tales including 'The Brave Little Owl' (courage and wisdom under the stars), 'The Dreamy Bear' (moonlight dreams), and 'Stars Above Us' (magical journey through the stars) with elegant African sunset imagery and audio playback controls",
       },
       {
-        title: "Beautiful Narrations",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tir.jpg-v1FBy955RXRhxK3EEAUR433EdS17lc.jpeg",
-        description:
-          "Warm illustration showcasing the bond between parent and child during storytelling, with soothing voice narrations",
-      },
-      {
-        title: "Story Categories",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tir.jpg-v1FBy955RXRhxK3EEAUR433EdS17lc.jpeg",
-        description:
-          "Diverse collection of content including traditional stories, sleep sounds, and mindfulness activities in both Amharic and English",
-      },
-      {
-        title: "Story Player",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tir.jpg-v1FBy955RXRhxK3EEAUR433EdS17lc.jpeg",
-        description: "Elegant story player interface with professional narrations and easy-to-use audio controls",
+        title: "Discover Beautiful Narrations",
+        image: "/bedtime-discover-narrations.jpg",
+        description: "Heartwarming illustration showcasing the special bond between parent and child during storytelling time, featuring 'Discover Beautiful Narrations' with the tagline 'Listen to captivating bedtime stories narrated by soothing voices' against a dreamy purple starlit background",
       },
     ],
   },
@@ -138,28 +130,24 @@ export const projects = [
     ],
     screenshots: [
       {
-        title: "Welcome Screen",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cop.jpg-Lx9ckgn0Mxm8UY9kaZT279G5r97Zz7.jpeg",
-        description:
-          "Modern welcome interface with promotional offers and quick access to special deals for coffee traders",
+        title: "Welcome to CoffeeFlow",
+        image: "/coffeeflow-welcome.jpg",
+        description: "Elegant welcome screen with warm brown coffee-themed design featuring 'Welcome to CoffeeFlow' greeting, attractive promotional offers including '15% OFF Sign in & Enjoy' incentive, 'Special Offers' section, and premium coffee bean imagery creating an inviting user experience for coffee traders and enthusiasts",
       },
       {
-        title: "Coffee Auction Event",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cop.jpg-Lx9ckgn0Mxm8UY9kaZT279G5r97Zz7.jpeg",
-        description:
-          "Featured LIMU ETHIOPIA premium coffee auction with real-time lot availability tracking and bidding options",
+        title: "Coffee Market Dashboard",
+        image: "/coffeeflow-dashboard.jpg",
+        description: "Comprehensive daily commodity trade data dashboard featuring Ethiopian coffee market locations including Bebeka, Agaro, Jimma, Guji, and Wollega with visual coffee variety showcase displaying Yirgacheffe, Sidamo, and other premium Ethiopian coffee beans with detailed market analytics",
+      },
+      {
+        title: "Coffee Varieties & Export",
+        image: "/coffeeflow-coffee-varieties.jpg",
+        description: "Beautiful display of 8 different coffee varieties in wooden bowls showing various coffee beans and grounds, with News Alerts toggle, Available updates for Premium Coffee Lot (ETB 500.5/kg), premium quality organic coffee beans description, and 'Looking to Export Your Coffee?' section with 'Sell Coffee Lot' button for secure transactions",
       },
       {
         title: "Buy Coffee Lot",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cop.jpg-Lx9ckgn0Mxm8UY9kaZT279G5r97Zz7.jpeg",
-        description:
-          "Streamlined purchase interface for coffee lots with secure transaction handling and detailed pricing information",
-      },
-      {
-        title: "Market Data",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cop.jpg-Lx9ckgn0Mxm8UY9kaZT279G5r97Zz7.jpeg",
-        description:
-          "Live ECX commodity trade data showing current market prices and trading volumes for various coffee grades",
+        image: "/coffeeflow-buy-lot.jpg",
+        description: "Detailed coffee lot purchase interface for 'Seats - The Coffee Lot' from Arba Minch (13 Oct), sold by CoffeeMarket with 0 lots sold, showing lot details, security features including 'This is not a Secure Swap ticket' with anti-fraud systems, original price information (700.5 birr per lot), final price ETB 705.2, and prominent blue 'Buy' button",
       },
     ],
   },
@@ -311,28 +299,24 @@ export const projects = [
     ],
     screenshots: [
       {
-        title: "Featured Courses",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5.jpg-HVho4zvRg5Z6Js9Y94IxaBtG70HJKm.jpeg",
-        description:
-          "Main dashboard showcasing top courses with beautiful course cards, ratings, and instructor information",
+        title: "Welcome Back - Login",
+        image: "/goodgrade-login.jpg",
+        description: "Clean authentication screen featuring CREAVERS branding with purple logo, 'Welcome Back' greeting, Google sign-in integration, traditional email/password login fields, 'Remember Me' checkbox, 'Forgotten password?' link, and prominent 'Log In' and 'Create Account' buttons",
       },
       {
-        title: "Welcome Back",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5.jpg-HVho4zvRg5Z6Js9Y94IxaBtG70HJKm.jpeg",
-        description:
-          "Secure authentication screen with multiple sign-in options including Google integration and traditional email/password login",
+        title: "Mail Send Feature",
+        image: "/goodgrade-mail-send.jpg",
+        description: "Professional email composition interface with 'To Mail', 'Subject', and 'Text' input fields, Send and Clear action buttons, and comprehensive contact information footer displaying postal address (PO Box Bole Medhanealen, Abyssina Building 3rd floor), phone (251-116-674192), email (contact@creavers.com), website (creavers.com), and Skype details",
       },
       {
-        title: "Course Details",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5.jpg-HVho4zvRg5Z6Js9Y94IxaBtG70HJKm.jpeg",
-        description:
-          "Detailed course view showing ratings, instructor information, course overview, and key features like self-paced learning options",
+        title: "App Settings",
+        image: "/goodgrade-settings.jpg",
+        description: "Comprehensive settings screen with blue header featuring Language selection, Backup and Account management, Notification reminders, Course-related notifications, Privacy and Terms, Help and Support, FAQ section, and Logout option with clean navigation arrows",
       },
       {
         title: "Digital Bookstore",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5.jpg-HVho4zvRg5Z6Js9Y94IxaBtG70HJKm.jpeg",
-        description:
-          "Integrated bookstore featuring trending and popular educational materials with easy search and category filtering",
+        image: "/goodgrade-shop.jpg",
+        description: "Integrated bookstore (Shope) featuring search functionality, category filters (Discover, Romantic, Author, Genres), trending books including 'Reminders of Him' by Colleen Hoover (9.99€), Harry Potter series by J.K. Rowling (12.99€ and Free), popular titles like 'The Maid' by Nita Prose and 'It Starts With Us' by Colleen Hoover, with pricing and discount sections",
       },
     ],
   },
@@ -379,7 +363,7 @@ export const projects = [
     id: "taza",
     title: "Taza",
     description: "A comprehensive real estate mobile application featuring property listings, detailed property views, advanced search filters, user authentication, and property management for both buyers and sellers in Ethiopia.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
+    image: "/taza-property-detail.png",
     demoUrl: "https://github.com/yordanos-bogale5/taza-real-estate",
     technologies: ["Flutter", "Firebase", "MongoDB", "REST API"],
     features: [
@@ -391,24 +375,39 @@ export const projects = [
     ],
     screenshots: [
       {
+        title: "Property Details - Condominium",
+        image: "/taza-property-detail.png",
+        description: "Detailed property view showing a beautiful condominium with pricing information, property features including bedrooms, bathrooms, and garage spaces",
+      },
+      {
+        title: "Property Details - House",
+        image: "/taza-property-detail-2.png",
+        description: "Property listing showing a beautiful house for rent with detailed information including price, bedrooms, bathrooms, and garages",
+      },
+      {
+        title: "Property Details - Condominium Exterior",
+        image: "/taza-property-detail-3.png",
+        description: "Condominium property listing showing exterior view with pricing (8,990 Birr/Monthly), 1 bedroom, 1 bathroom, 1 garage, and property details",
+      },
+      {
+        title: "Property Details - Apartment Interior",
+        image: "/taza-property-detail-4.png",
+        description: "Rental apartment at Nefas Silk Lafto showing modern interior design with pricing (10,000 Birr/Monthly), 3 bedrooms, 3 bathrooms, 1 garage",
+      },
+      {
+        title: "Contact Information",
+        image: "/taza-contact-info.png",
+        description: "Contact details screen showing property agent information with options to enquire, setup tour, virtual tour, and leave reviews",
+      },
+      {
+        title: "Login Screen",
+        image: "/taza-login.png",
+        description: "User authentication screen with email/password login, social media login options, and account registration links",
+      },
+      {
         title: "Welcome Screen",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-        description: "Modern welcome screen for the Taza real estate application with property search features",
-      },
-      {
-        title: "Property Listings",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-        description: "Comprehensive property listings with advanced filtering and search capabilities",
-      },
-      {
-        title: "Property Details",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-        description: "Detailed property view with images, specifications, and contact information",
-      },
-      {
-        title: "Search Filters",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/taza-app.jpg-placeholder",
-        description: "Advanced search filters for location, price range, property type, and amenities",
+        image: "/taza-splash-new.png",
+        description: "Modern splash screen with purple gradient background featuring the Taza app logo and house icon",
       },
     ],
   },

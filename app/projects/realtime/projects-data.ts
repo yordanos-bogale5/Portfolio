@@ -5,7 +5,7 @@ export const realtimeProjects = [
     title: "LiveStockPro",
     description:
       "A real-time livestock trading platform with live market data feeds, WebSocket integration for instant price updates, and comprehensive trading analytics for livestock markets.",
-    image: "/livestockpro-screenshot.png",
+    image: "/livestockpro-realtime.png",
     videoUrl: "https://drive.google.com/file/d/1Hz-YeCdI2q6vwOamgnPHcteEjpoOOhDS/view?usp=sharing",
     technologies: ["PHP", "WebSocket", "MySQL", "JavaScript", "Upstock API", "Real-time Data"],
     features: [
@@ -30,7 +30,7 @@ The platform includes advanced analytics tools that process real-time data strea
     title: "RaceDataLive",
     description:
       "A real-time race data extraction system that captures live timing data from karting races using WebSocket technology for strategic analysis and race monitoring.",
-    image: "/attached_assets/Screenshot (29)_1753805295945.png",
+    image: "/racedatalive-realtime.png",
     videoUrl: "https://drive.google.com/file/d/1u_NdmbDTvDQpkaytcig0TlnmtkqWmHdo/view?usp=sharing",
     technologies: ["WebSocket", "JavaScript", "Real-time Data", "Live Timing", "Data Processing"],
     features: [
@@ -55,7 +55,7 @@ Built with modern web technologies and optimized for high-frequency data process
     title: "WebSocketGuardian",
     description:
       "A robust WebSocket server management system using Supervisor to ensure continuous operation and reliability for real-time applications and live data streaming services.",
-    image: "/placeholder.svg",
+    image: "/websocketguardian-realtime.png",
     videoUrl: "https://drive.google.com/file/d/1Rr2TuptsFq-HugoEDjrJpA758FYOhXNX/view?usp=sharing",
     technologies: ["WebSocket", "Supervisor", "Node.js", "Process Management", "System Administration", "Real-time Server"],
     features: [
